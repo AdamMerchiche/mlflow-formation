@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/adam/Desktop/Formation%20-%20MLFLOW/Exo1%20copy/mlruns/942869108457594063/51992523303d49519b1e3dc893a6a152/artifacts
+end_time: 1750843960250
+entry_point_name: ''
+experiment_id: '942869108457594063'
+lifecycle_stage: active
+run_id: 51992523303d49519b1e3dc893a6a152
+run_name: kindly-panda-559
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750843954915
+status: 3
+tags: []
+user_id: adam

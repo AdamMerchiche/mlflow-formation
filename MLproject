@@ -1,0 +1,23 @@
+#Nom du projet
+name: MLflow with Iris
+
+python_env: python_env.yaml
+
+#Sorte d'orchestration des différents scripts
+# Mais on va le faire qu'avec notre fichier .sh
+entry_points: 
+  main: #On définit les paramètres avec les valeurs par défaut. Si on en avait pas, on aurait retiré le default
+    parameters:
+      input_data: {type: path, default: "data/raw/iris_2025-06-23 15:46:23.488049.parquet"}
+      output_folder: {type: path, default: data/processed}
+      training_data: {type: path, default: 'data/processed/train.parquet' }
+      tracking_uri: {type: str, default: "http://127.0.0.1:5000"}
+      model_registry_name: {type: str, default : 'TRACKING_RF_FINAL'}
+      test_data: {type: path, default: 'data/processed/test.parquet'} #On met un pipe et backslash pour executer la commande sur plusieurs lignes
+    command: | 
+              bash pipeline.sh --input_data {input_data} \
+              --output_folder {output_folder} \
+              --training_data {training_data} \
+              --tracking_uri {tracking_uri} \
+              --model_registry_name {model_registry_name} \
+              --test_data {test_data}
